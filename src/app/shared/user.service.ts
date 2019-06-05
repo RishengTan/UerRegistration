@@ -28,7 +28,7 @@ export class UserService {
 
   register() {
     var body = {
-      UserName: this.RegisterForm.value.UserName,
+      UserName : this.RegisterForm.value.UserName,
       Email: this.RegisterForm.value.Email,
       Password: this.RegisterForm.value.Password
     };
