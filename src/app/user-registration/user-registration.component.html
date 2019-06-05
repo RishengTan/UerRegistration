@@ -1,0 +1,20 @@
+<div class="container contain1">
+  <div class="row align-items-center row2">
+    <img src="/assets/img/logo.png" alt="">
+  </div>
+  <div class="row justify-content-end row1">
+    <div class="col-md-6  align-self-start  mycol">
+      <form [formGroup]='s.RegisterForm' (submit)='onSubmit()'>
+        <div class="form-group">
+          <div><label>UserName<input formControlName='UserName'></label></div>
+          <div><label>Email<input formControlName='Email'></label></div>
+          <div><label>Password<input type="password" formControlName='Password'></label></div>
+          <button class="btn btn-primary" type="submit">Register</button>
+          <a routerLink="/signin" class="btn btn-primary">Sign In</a>
+          
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>

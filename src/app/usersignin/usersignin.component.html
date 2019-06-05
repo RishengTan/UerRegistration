@@ -1,0 +1,21 @@
+<div class="container contain1">
+  <div class="row align-items-center row2">
+    <a routerLink="/register" class="home"><img src="/assets/img/logo.png" alt=""></a>
+
+  </div>
+  <div class="row justify-content-end row1">
+    <div class="col-md-6  align-self-start  mycol">
+
+      <form [formGroup]='service.loginForm' (submit)='onsubmit()'>
+        <div><label>UserName<input formControlName='UserName'></label></div>
+
+        <div><label>Password<input type="password" formControlName='Password'></label></div>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+
+
+
+    </div>
+
+  </div>
+</div>

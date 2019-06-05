@@ -1,0 +1,26 @@
+<form #myform='ngForm' (submit)="onSubmit(myform)">
+  <div>id: </div>
+  <div>
+      <input  name="heroID" [(ngModel)]='heroID'>
+      <label>name:
+          <input [(ngModel)]='heroName'name='heroName'#name="ngModel" />
+      </label>
+      <label>offense:
+          <input [(ngModel)]="offense" name='offense' #name="ngModel" />
+      </label>
+      <label>health:
+          <input [(ngModel)]="health" name='health'#name="ngModel" />
+      </label>
+      <label>speed:
+          <input [(ngModel)]="speed" name='speed'#name="ngModel" />
+      </label>
+      <label>defense:
+          <input [(ngModel)]="defense" name='defense'#name="ngModel" />
+      </label>
+      <button type="submit">submit</button>
+      
+
+  </div>
+
+</form>
+

@@ -1,0 +1,65 @@
+<h1>
+  Search Result 
+</h1>
+<div>
+  <ul *ngIf="searchDetails" class="searchDetails">
+      <li *ngFor="let hero of searchDetails" (click)="onSelect(hero)" >
+          {{hero.heroName}}
+
+      </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.heroName | uppercase}} Details</h2>
+  <form #form='ngForm' (submit)="onSubmit(form)">
+      <div><span>id: </span>{{selectedHero.heroID}}</div>
+      <div>
+          <input type="hidden" name="heroID" [value]='selectedHero.heroID'>
+          <label>name:
+              <input [(ngModel)]="selectedHero.heroName" name='heroName' />
+          </label>
+          <label>offense:
+              <input [(ngModel)]="selectedHero.offense" name='offense' />
+          </label>
+          <label>health:
+              <input [(ngModel)]="selectedHero.health" name='health' />
+          </label>
+          <label>speed:
+              <input [(ngModel)]="selectedHero.speed" name='speed' />
+          </label>
+          <label>defense:
+              <input [(ngModel)]="selectedHero.defense" name='defense' />
+          </label>
+          <button type="submit">submit</button>
+          <button type='delete'(click)="delete(selectedHero)">delete</button>
+
+      </div>
+      
+  </form>
+  <div class="col-8">
+      <canvas baseChart [datasets]='selectedDataset' [labels]='barChartLabels' [options]='barChartOptions'
+          [legend]='barChartLegend' [chartType]='Type' [colors]='color1'>
+
+      </canvas>
+  </div>
+  <div class="col-6">
+      <canvas baseChart [datasets]='selectedDataset' [labels]='barChartLabels' [options]='barChartOptions'
+          [legend]='barChartLegend' [chartType]='Type2' [colors]='color'>
+
+      </canvas>
+  </div>
+  <div class="col-6">
+      <canvas baseChart [datasets]='selectedDataset' [labels]='barChartLabels' [options]='barChartOptions'
+          [legend]='barChartLegend' [chartType]='Type3'>
+
+      </canvas>
+  </div>
+  <div class="col-6">
+      <canvas baseChart [datasets]='selectedDataset' [labels]='barChartLabels' [options]='barChartOptions'
+          [legend]='barChartLegend' [chartType]='Type4'>
+
+      </canvas>
+  </div>
+</div>

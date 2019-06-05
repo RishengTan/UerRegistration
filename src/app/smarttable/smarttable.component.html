@@ -1,0 +1,75 @@
+<div class="search-div">
+  <button mat-icon-button (click)='add()'> 
+      <mat-icon >add_circle</mat-icon>
+    </button>
+    
+      <input [(ngModel)]='searchKey' placeholder="Search" autocomplete="off"  (keyup) = 'filter()' >
+      
+    
+</div>
+<div class="mat-elevation-z8">
+  <table  mat-table class="full-width-table" [dataSource]="dataSource"  matSort aria-label="Elements" >
+
+
+    <ng-container matColumnDef="heroID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>heroID</th>
+      <td mat-cell  *matCellDef="let row" >{{row.heroID}}</td>
+    </ng-container>
+    <ng-container matColumnDef="heroName" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>heroName</th>
+      <td mat-cell *matCellDef="let row">{{row.heroName}}</td>
+      
+    </ng-container>
+    <ng-container matColumnDef="speed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>speed</th>
+      <td mat-cell  *matCellDef="let row" >{{row.speed}}</td>
+    </ng-container>
+    <ng-container matColumnDef="health">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>health</th>
+      <td mat-cell  *matCellDef="let row" >{{row.health}}</td>
+    </ng-container>
+    <ng-container matColumnDef="offense" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>offense</th>
+      <td mat-cell *matCellDef="let row">{{row.offense}}</td>
+      
+    </ng-container>
+
+
+    
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)='delete(row)'>
+          <mat-icon >delete_outline</mat-icon>
+        </button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions2">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)='launch(row)'>
+          <mat-icon >launch</mat-icon>
+        </button></td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions3">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)='edit(row)'><mat-icon >edit</mat-icon></button>
+        <button mat-icon-button (click)='add(row)'><mat-icon >add</mat-icon></button>
+      </td>
+    </ng-container>
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 50, 100, 250]">
+  </mat-paginator>
+</div>

@@ -1,0 +1,26 @@
+<form [formGroup]='Heroservice.addheroForm' (submit)="onSubmit()">
+
+  <div class="form-group">
+    <label>Id:
+      <input formControlName='heroID'>
+    </label>
+    <label>name:
+      <input formControlName='heroName'  />
+    </label>
+    <label>offense:
+      <input formControlName='offense' />
+    </label>
+    <label>health:
+      <input formControlName='health'  />
+    </label>
+    <label>speed:
+      <input formControlName='speed'  />
+    </label>
+    <label>defense:
+      <input formControlName='defense'  />
+    </label>
+    <button type="submit">submit</button>
+
+
+  </div>
+</form>
