@@ -58,7 +58,7 @@ export class SearchResultComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.Heroservice.putHero(form.value).subscribe();
+    this.Heroservice.putHero().subscribe();
     this.selectedDataset = [{data:[this.selectedHero.offense,this.selectedHero.speed,this.selectedHero.health,this.selectedHero.defense]}];
   }
   delete(hero){
