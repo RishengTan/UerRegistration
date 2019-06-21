@@ -18,11 +18,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditComponent } from './edit/edit.component';
 import { HeroService } from '../shared/hero.service';
 import { AddheroComponent } from '../addhero/addhero.component';
+import { Table1Component } from './table1/table1.component';
+import { Table2Component } from './table2/table2.component';
 
 
 
 @NgModule({
-  declarations: [SmarttableComponent, HerographComponent, EditComponent],
+  declarations: [SmarttableComponent, HerographComponent, EditComponent, Table1Component, Table2Component],
   imports: [
     CommonModule,
     SmarttableRoutingModule,
@@ -38,7 +40,7 @@ import { AddheroComponent } from '../addhero/addhero.component';
     FormsModule,
     MatFormFieldModule
   ],
-  entryComponents:[HerographComponent,EditComponent,AddheroComponent],
+  entryComponents:[HerographComponent,EditComponent,AddheroComponent, Table1Component, Table2Component],
   providers:[MatDialog,HeroService]
 })
 export class SmarttableModule { }

@@ -123,8 +123,8 @@ export class HomeComponent implements OnInit, OnChanges {
   }
 
   chartjs() {
-    var ctx = this.canvas.nativeElement.getContext('2d');
-    new Chart(ctx, {
+    
+    new Chart("myChart", {
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],

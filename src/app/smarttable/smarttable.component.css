@@ -1,4 +1,17 @@
 .full-width-table {
   width: 80%;
 }
+#table2{
+  cursor: pointer;
+}
+
+.list-group{
+  cursor: pointer;
+}
+
+.list-group li :hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
 

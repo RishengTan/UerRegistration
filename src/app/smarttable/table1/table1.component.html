@@ -1,0 +1,26 @@
+<h1>
+  table1
+</h1>
+<form #myform='ngForm' (submit)="onSubmit(myform)">
+
+  <div>
+
+    <label>firstname:
+      <input [(ngModel)]='firstname' name='firstname' #name="ngModel" />
+    </label>
+    <label>lastname:
+      <input [(ngModel)]="lastname" name='lastname' #name="ngModel" />
+    </label>
+    <label>DOB:
+      <input [(ngModel)]="DOB" name='DOB' #name="ngModel" />
+    </label>
+    <label>Address:
+      <input [(ngModel)]="Address" name='Address' #name="ngModel" />
+    </label>
+
+    <button type="submit">submit</button>
+
+
+  </div>
+
+</form>
